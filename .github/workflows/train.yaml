@@ -60,13 +60,14 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{
                   "input": {
-                      "instance_prompt": "a photo of a ${{ inputs.prompt-identifier }} person",
-                      "class_prompt": "a photo of a person",
+                      "instance_prompt": "illustration of a ${{ inputs.prompt-identifier }} style",
+                      "class_prompt": "illustration of a style",
                       "instance_data": "${{ steps.upload-training-data.outputs.INSTANCE_DATA_URL }}",
+                      "ckpt_base": "https://huggingface.co/darkstorm2150/Protogen_x5.3_Official_Release/resolve/main/ProtoGen_X5.3-pruned-fp16.ckpt",
                       "max_train_steps": ${{ inputs.max-train-steps }}
                   },
                   "model": "${{ inputs.model-name }}",
-                  "trainer_version": "cd3f925f7ab21afaef7d45224790eedbb837eeac40d22e8fefe015489ab644aa"
+                  "trainer_version": "e08aad944e0cf515d59da9fe0f0a32278be9395505b17c71d0e6ff5ec0b91a8c"
               }' \
           https://dreambooth-api-experimental.replicate.com/v1/trainings
 
