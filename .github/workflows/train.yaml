@@ -60,10 +60,10 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{
                   "input": {
-                      "instance_prompt": "illustration of a ${{ inputs.prompt-identifier }} style",
-                      "class_prompt": "illustration of a style",
+                     "instance_prompt": "illustration in a ${{ inputs.prompt-identifier }} style",
+                      "class_prompt": "illustration in a style",
                       "instance_data": "${{ steps.upload-training-data.outputs.INSTANCE_DATA_URL }}",
-                      "ckpt_base": "https://huggingface.co/darkstorm2150/Protogen_x5.3_Official_Release/resolve/main/ProtoGen_X5.3-pruned-fp16.ckpt",
+                      "ckpt_base": "https://storage.googleapis.com/replicant-misc/openjourney-v2.ckpt",
                       "max_train_steps": ${{ inputs.max-train-steps }}
                   },
                   "model": "${{ inputs.model-name }}",
